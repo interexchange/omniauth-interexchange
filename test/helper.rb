@@ -1,13 +1,13 @@
-require 'bundler/setup'
-require 'minitest/autorun'
-require 'mocha/setup'
-require 'omniauth/strategies/facebook'
+require "bundler/setup"
+require "minitest/autorun"
+require "mocha/setup"
+require "omniauth/strategies/workabroad"
 
 OmniAuth.config.test_mode = true
 
 module BlockTestHelper
   def test(name, &blk)
-    method_name = "test_#{name.gsub(/\s+/, '_')}"
+    method_name = "test_#{name.gsub(/\s+/, "_")}"
     raise "Method already defined: #{method_name}" if instance_methods.include?(method_name.to_sym)
     define_method method_name, &blk
   end
@@ -32,25 +32,25 @@ end
 
 class StrategyTestCase < TestCase
   def setup
-    @request = stub('Request')
+    @request = stub("Request")
     @request.stubs(:params).returns({})
     @request.stubs(:cookies).returns({})
     @request.stubs(:env).returns({})
     @request.stubs(:scheme).returns({})
     @request.stubs(:ssl?).returns(false)
 
-    @client_id = '123'
-    @client_secret = '53cr3tz'
+    @client_id = "123"
+    @client_secret = "53cr3tz"
   end
 
   def strategy
     @strategy ||= begin
       args = [@client_id, @client_secret, @options].compact
-      OmniAuth::Strategies::Facebook.new(nil, *args).tap do |strategy|
+      OmniAuth::Strategies::Workabroad.new(nil, *args).tap do |strategy|
         strategy.stubs(:request).returns(@request)
       end
     end
   end
 end
 
-Dir[File.expand_path('../support/**/*', __FILE__)].each &method(:require)
+Dir[File.expand_path("../support/**/*", __FILE__)].each &method(:require)
