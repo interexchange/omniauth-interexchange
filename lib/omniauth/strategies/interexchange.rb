@@ -2,13 +2,13 @@ require "omniauth/strategies/oauth2"
 
 module OmniAuth
   module Strategies
-    class Workabroad < OmniAuth::Strategies::OAuth2
-      option :name, :workabroad
+    class InterExchange < OmniAuth::Strategies::OAuth2
+      option :name, :InterExchange
 
       option :client_options, {
-        site: "https://api.workabroad.io",
-        authorize_url: "https://access.workabroad.io/oauth/authorize",
-        token_url: "https://access.workabroad.io/oauth/token/info"
+        site: "https://access.interexchange.io",
+        authorize_url: "https://access.interexchange.io/oauth/authorize",
+        token_url: "https://access.interexchange.io/oauth/token/info"
       }
 
       uid do

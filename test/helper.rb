@@ -1,7 +1,7 @@
 require "bundler/setup"
 require "minitest/autorun"
 require "mocha/setup"
-require "omniauth/strategies/workabroad"
+require "omniauth/strategies/interexchange"
 
 OmniAuth.config.test_mode = true
 

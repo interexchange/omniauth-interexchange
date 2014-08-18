@@ -1,5 +1,5 @@
 require "helper"
-require "omniauth-workabroad"
+require "omniauth-interexchange"
 require "openssl"
 require "base64"
 
@@ -8,16 +8,16 @@ class StrategyTest < StrategyTestCase
 end
 
 class ClientTest < StrategyTestCase
-  test "has correct WorkAbroad api" do
-    assert_equal "https://api.workabroad.io", strategy.client.site
+  test "has correct InterExchange api" do
+    assert_equal "https://api.interexchange.io", strategy.client.site
   end
 
   test "has correct authorize url" do
-    assert_equal "https://access.workabroad.io/oauth/authorize", strategy.client.options[:authorize_url]
+    assert_equal "https://access.interexchange.io/oauth/authorize", strategy.client.options[:authorize_url]
   end
 
   test "has correct token url" do
-    assert_equal "https://access.workabroad.io/oauth/token/info", strategy.client.options[:token_url]
+    assert_equal "https://access.interexchange.io/oauth/token/info", strategy.client.options[:token_url]
   end
 end
 
@@ -35,19 +35,19 @@ end
 class InfoTest < StrategyTestCase
   def setup
     super
-    @raw_info ||= { "email" => "dirkkelly@workabroad.io" }
+    @raw_info ||= { "email" => "dirkkelly@interexchange.io" }
     strategy.stubs(:raw_info).returns(@raw_info)
   end
 
   test "returns the email" do
-    assert_equal "dirkkelly@workabroad.io", strategy.info["email"]
+    assert_equal "dirkkelly@interexchange.io", strategy.info["email"]
   end
 end
 
 class ExtraTest < StrategyTestCase
   def setup
     super
-    @raw_info ||= { "email" => "dirkkelly@workabroad.io" }
+    @raw_info ||= { "email" => "dirkkelly@interexchange.io" }
     strategy.stubs(:raw_info).returns(@raw_info)
   end
 
