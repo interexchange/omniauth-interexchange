@@ -1,7 +1,6 @@
-
 # OmniAuth InterExchange
 
-WorkAbroad OAuth2 Strategy for OmniAuth.
+InterExchange OAuth2 Strategy for OmniAuth.
 
 Supports the OAuth 2.0 server-side and client-side flows.
 
@@ -19,13 +18,13 @@ Then `bundle install`.
 
 ## Usage
 
-`OmniAuth::Strategies::Workabroad` is simply a Rack middleware. Read the OmniAuth docs for detailed instructions: https://github.com/intridea/omniauth.
+`OmniAuth::Strategies::InterExchange` is simply a Rack middleware. Read the OmniAuth docs for detailed instructions: https://github.com/intridea/omniauth.
 
 Here's a quick example, adding the middleware to a Rails app in `config/initializers/interexchange.rb`:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :InterExchange, ENV['WORKABROAD_KEY'], ENV['WORKABROAD_SECRET']
+  provider :InterExchange, ENV['INTEREXCHANGE_KEY'], ENV['INTEREXCHANGE_SECRET']
 end
 ```
 
