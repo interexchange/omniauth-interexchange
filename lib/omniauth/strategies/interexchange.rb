@@ -3,7 +3,7 @@ require "omniauth/strategies/oauth2"
 module OmniAuth
   module Strategies
     class InterExchange < OmniAuth::Strategies::OAuth2
-      option :name, :InterExchange
+      option :name, :interexchange
 
       option :client_options, {
         site: "https://auth.interexchange.io",

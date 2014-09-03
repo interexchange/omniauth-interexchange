@@ -24,7 +24,7 @@ Here's a quick example, adding the middleware to a Rails app in `config/initiali
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :InterExchange, ENV['INTEREXCHANGE_KEY'], ENV['INTEREXCHANGE_SECRET']
+  provider :interexchange, ENV['INTEREXCHANGE_KEY'], ENV['INTEREXCHANGE_SECRET']
 end
 ```
 

@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name     = "omniauth-interexchange"
   s.version  = OmniAuth::InterExchange::VERSION
   s.authors  = ["Dirk Kelly", "Ted Olsen"]
-  s.email    = ["dirkkelly@interexchange.io", "tgolsen@interexchange.io"]
+  s.email    = ["dkelly@interexchange.org", "tolsen@interexchange.org"]
   s.summary  = "InterExchange OAuth2 Strategy for OmniAuth"
   s.homepage = "https://github.com/interexchange/omniauth-interexchange"
   s.license  = "MIT"
