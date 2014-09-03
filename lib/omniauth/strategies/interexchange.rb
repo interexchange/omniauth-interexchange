@@ -6,9 +6,9 @@ module OmniAuth
       option :name, :InterExchange
 
       option :client_options, {
-        site: "https://access.interexchange.io",
-        authorize_url: "https://access.interexchange.io/oauth/authorize",
-        token_url: "https://access.interexchange.io/oauth/token/info"
+        site: "https://auth.interexchange.io",
+        authorize_url: "https://auth.interexchange.io/oauth/authorize",
+        token_url: "https://auth.interexchange.io/oauth/token"
       }
 
       uid do
